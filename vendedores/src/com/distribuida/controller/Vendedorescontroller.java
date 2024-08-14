@@ -36,7 +36,7 @@ import com.distribuida.entities.Vendedores;
 				
 				
 			
-				List<Vendedores>Vendedores =VendedoresDAO.findALL();
+				List<Vendedores>Vendedores =VendedoresDAO.findAll();
 				
 				model.addAttribute("Vendedores",Vendedores);
 				
