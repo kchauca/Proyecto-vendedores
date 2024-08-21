@@ -28,17 +28,17 @@ public class Vendedores {
 		private String direccion;
 		@Column(name = "telefono")
 		private String telefono;
-		@Column(name = "correo")
-		private String correo;
+		@Column(name = "email")
+		private String email;
 		
 		
-		public Vendedores(int idVendedores, String nombre, String direccion, String telefono, String correo) {
+		public Vendedores(int idVendedores, String nombre, String direccion, String telefono, String email) {
 			super();
 			this.idVendedores = idVendedores;
 			this.nombre = nombre;
 			this.direccion = direccion;
 			this.telefono = telefono;
-			this.correo = correo;
+			this.email = email;
 		}
 		public int getIdVendedores() {
 			return idVendedores;
@@ -65,15 +65,15 @@ public class Vendedores {
 			this.telefono = telefono;
 		}
 		public String getCorreo() {
-			return correo;
+			return email;
 		}
-		public void setCorreo(String correo) {
-			this.correo = correo;
+		public void setCorreo(String email) {
+			this.email = email;
 		}
 		@Override
 		public String toString() {
 			return "Vendedores [idVendedores=" + idVendedores + ", nombre=" + nombre + ", direccion=" + direccion
-					+ ", telefono=" + telefono + ", correo=" + correo + "]";
+					+ ", telefono=" + telefono + ", correo=" + email + "]";
 		}
 		
 	

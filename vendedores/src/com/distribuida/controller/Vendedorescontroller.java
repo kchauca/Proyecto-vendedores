@@ -73,8 +73,8 @@ import com.distribuida.entities.Vendedores;
 				Vendedores Vendedores =VendedoresDAO.findOne(idVendedores);
 				model.addAttribute("Vendedores", Vendedores);
 			}
-				if(opcion==1)return "add-Vendedoreses";
-				else return "del-Vendedoreses";
+				if(opcion==1)return "add-Vendedores";
+				else return "del-Vendedores";
 				
 		//	} catch (Exception e) {
 				// TODO: handle exception
@@ -91,7 +91,7 @@ import com.distribuida.entities.Vendedores;
 			              ,@RequestParam("nombre")@Nullable String nombre
 			              ,@RequestParam("direccion")@Nullable String direccion
 		                  ,@RequestParam("telefono")@Nullable String  telefono
-			              ,@RequestParam("correo")@Nullable String  correo
+			              ,@RequestParam("email")@Nullable String  email
 			              ,Model model
 			
 			){
@@ -102,15 +102,15 @@ import com.distribuida.entities.Vendedores;
 				
 
 					if(idVendedores ==null) {
-				Vendedores Vendedores =new Vendedores(0,nombre,direccion,telefono,correo);
+				Vendedores Vendedores =new Vendedores(0,nombre,direccion,telefono,email);
 				VendedoresDAO.add(Vendedores);
 				
 				}else {
 					
-					Vendedores Vendedores2 =new Vendedores(idVendedores,nombre,direccion,telefono,correo);
+					Vendedores Vendedores2 =new Vendedores(idVendedores,nombre,direccion,telefono,email);
 					VendedoresDAO.up(Vendedores2);
 				}
-					return "redirect:/clintes/findAll"; 
+					return "redirect:/Vendedores/findAll"; 
 				
 			//	} catch (Exception e) {
 					// TODO: handle exception
@@ -130,7 +130,7 @@ import com.distribuida.entities.Vendedores;
 		//	try {
 			
 				VendedoresDAO.del(idVendedores);
-				return"redirect:/Vendedoreses/findAll";
+				return"redirect:/Vendedores/findAll";
 	//		} catch (Exception e) {
 				// TODO: handle exception
 	//		}
